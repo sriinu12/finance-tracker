@@ -19,3 +19,7 @@ A personal finance tracker built with Python and PyQt5. It allows users to manag
    ```sh
    git clone https://github.com/username/finance-tracker.git
    cd finance-tracker
+2. Install dependencies:
+   pip install -r requirements.txt
+3. Run the application:
+   python main.py
