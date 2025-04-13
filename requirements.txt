@@ -1,0 +1,5 @@
+# requirements.txt
+PyQt5
+pandas
+matplotlib
+seaborn
