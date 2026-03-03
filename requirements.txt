@@ -1,5 +1,4 @@
-# requirements.txt
-PyQt5
-pandas
-matplotlib
-seaborn
+PyQt5>=5.15
+pandas>=2.2
+matplotlib>=3.9
+seaborn>=0.13

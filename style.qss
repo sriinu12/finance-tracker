@@ -1,27 +1,108 @@
 QMainWindow {
-    background-color: #f5f5f5; /* Light gray background */
-    color: #333333; /* Dark text color */
+    background: qlineargradient(
+        x1: 0,
+        y1: 0,
+        x2: 1,
+        y2: 1,
+        stop: 0 #fff8ef,
+        stop: 0.45 #f8fbff,
+        stop: 1 #eef9f2
+    );
+    color: #2b2a28;
+    font-family: "Segoe UI", "Poppins", sans-serif;
+    font-size: 13px;
+}
+
+QTabWidget::pane {
+    border: 1px solid #d8e2db;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.92);
+}
+
+QTabBar::tab {
+    background: #eef2ed;
+    color: #4a504b;
+    border: 1px solid #d9e3db;
+    border-bottom: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 8px 14px;
+    margin-right: 4px;
+}
+
+QTabBar::tab:selected {
+    background: #ffffff;
+    color: #1f4d3c;
 }
 
 QPushButton {
-    background-color: #4CAF50; /* Green button */
-    color: white;
+    background-color: #1f8a70;
+    color: #ffffff;
     border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-weight: 600;
 }
 
 QPushButton:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #18735d;
+}
+
+QPushButton:pressed {
+    background-color: #135b4a;
 }
 
 QLabel {
-    font-size: 14px;
-    color: #333333;
+    color: #2b2a28;
 }
 
-QLineEdit {
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    padding: 4px;
+QLineEdit,
+QComboBox,
+QDateEdit {
+    border: 1px solid #c8d4cb;
+    border-radius: 8px;
+    background: #ffffff;
+    padding: 7px 9px;
+}
+
+QLineEdit:focus,
+QComboBox:focus,
+QDateEdit:focus {
+    border: 1px solid #1f8a70;
+}
+
+QTableWidget {
+    border: 1px solid #d4dfd7;
+    border-radius: 10px;
+    background: #ffffff;
+    gridline-color: #e8eee9;
+    selection-background-color: #d7f2ea;
+    selection-color: #16362d;
+}
+
+QHeaderView::section {
+    background: #eff6f2;
+    color: #314238;
+    border: none;
+    border-bottom: 1px solid #d7e3dc;
+    padding: 8px;
+    font-weight: 600;
+}
+
+QFrame#metricCard {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid #d8e4dc;
+    border-radius: 12px;
+}
+
+QLabel#metricTitle {
+    color: #5a655e;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+QLabel#metricValue {
+    color: #154f3f;
+    font-size: 20px;
+    font-weight: 700;
 }

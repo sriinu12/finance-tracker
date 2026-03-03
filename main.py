@@ -1,27 +1,33 @@
-# main.py
-# Description: Launches the PyQt application for the Personal Finance Tracker.
+from __future__ import annotations
 
-import sys
 import os
+import sys
+
 from PyQt5.QtWidgets import QApplication
+
 from ui_mainwindow import MainWindow
 
-def load_stylesheet(file_path):
+
+def load_stylesheet(file_path: str) -> str:
     """Load QSS stylesheet from a file path relative to this module."""
     abs_path = os.path.join(os.path.dirname(__file__), file_path)
-    with open(abs_path, "r") as file:
-        return file.read()
+    try:
+        with open(abs_path, "r", encoding="utf-8") as file_obj:
+            return file_obj.read()
+    except OSError:
+        return ""
 
-def main():
+
+def main() -> None:
     app = QApplication(sys.argv)
-    
-    # Load and apply the stylesheet
     stylesheet = load_stylesheet("style.qss")
-    app.setStyleSheet(stylesheet)
-    
+    if stylesheet:
+        app.setStyleSheet(stylesheet)
+
     window = MainWindow()
     window.show()
     sys.exit(app.exec_())
+
 
 if __name__ == "__main__":
     main()
